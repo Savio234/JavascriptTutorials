@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="../../../HTML/img/javascript.png" type="image/png">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Functions</title>
+</head>
+<body>
+    
+
+    <h1>Your Input was: </h1>
+    <h3 id="customInput">_______</h3>
+    <h1>Answer =  </h1>
+    <h3 id="answer">_______</h3>
+    <h1 id="text"></h1>
+
+    <div class="interval"></div>
+
+    <div class="end"></div>
+
+
+
+
+    <script>
+
+        function greeting(name="Dom", age=24) {
+            // If nothing is assigned to the function 'greeting', 'Dom' and '24' becomes the default parameter
+            console.log("Hello World. Meet", name, "I'm", age, "years old")
+
+            return [name, age]
+            // Anything below the return statement does not work
+        }
+        var defaultValue = greeting()
+        var newFunc = greeting("Dominic Savio", 24)
+        var newName = greeting("Gerald", 22)
+        // The variable 'defaultValue' stores whatever the 'return' statement returns
+
+
+        function doMath(num) {
+            num = Number(num);
+            if (num) {
+                var addNum = (num + 100) / 3
+                console.log("Resulting number =", addNum)
+            } else {
+                return false;
+                console.log("Not a real number")
+            }
+            var add = document.getElementById("customInput")
+            add.innerText = num
+            var result = document.getElementById("answer")
+            result.innerText = addNum
+        }
+        doMath(prompt("Enter number: "))
+
+
+        function name(id) {
+            return document.getElementById("text")
+            console.log("Id is ", id)
+        }
+        var names = name("text")
+        names.innerText = "Custom inner Text"
+
+
+        // Celsius to Farenheit
+        function cTof(temp) {
+            // var farenheit = (temp * 1.8) + 32 or
+            return (temp * 1.8) + 32
+        }
+        var zero = cTof(0)
+        console.log(zero)
+
+        var twenty = cTof(20)
+        console.log(twenty)
+
+        var boiling = cTof(100)
+        console.log(boiling)
+
+        var freeze = cTof(-40)
+        console.log(freeze)
+
+
+        function kelvin(kel) {
+            // var temperature = kel + 273
+            // console.log(temperature)
+            return(kel + 273)
+        }
+        // kelvin(100)
+        var first = kelvin(30)
+        console.log(first)
+
+        var last = kelvin(50)
+        console.log(last)
+
+        var middle = kelvin(160)
+        console.log(middle)
+
+
+        function concat(a, b) {
+            let c = a + b
+            console.log(c)
+        }
+        concat("Hello ", "World")
+
+        // function outer(first, second) {
+        //     function inner(single) {
+        //         return single ** 2;
+        //     }
+        //     console.log(inner(first + second));
+        // }
+        // outer(20, 15)
+        // outer(3, 4)
+
+        // OR
+
+        function outer(first, second) {
+            let total = first + second;
+
+            function inner(single) {
+                let square = single ** 2;
+                console.log(square)
+            }
+            inner(total)
+        }
+        outer(20, 15)
+        outer(3, 4)
+
+        let i = 1;
+        const logRecorder = setInterval(function() {
+            console.log("Here is message number! " + i)
+            var text = document.querySelector(".interval")
+            text.innerText = "Here is message number! " + i
+            i += 1
+        }, 2000);
+
+        console.log(logRecorder)
+
+        setTimeout(function() {
+            clearInterval(logRecorder)
+            var stop = document.querySelector(".end")
+            stop.innerText = "I've stopped!"
+        }, 10500)
+        
+
+
+    </script>
+
+
+</body>
+</html>
