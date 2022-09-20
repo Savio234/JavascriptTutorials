@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=7">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="icon" href="../../../HTML/img/javascript.png" type="image/png">
+    <link rel="icon" href="../../../webdev/HTML/img/javascript.png" type="image/png">
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Functions</title>
 </head>
@@ -65,85 +65,48 @@
         names.innerText = "Custom inner Text"
 
 
-        // Celsius to Farenheit
-        function cTof(temp) {
-            // var farenheit = (temp * 1.8) + 32 or
-            return (temp * 1.8) + 32
-        }
-        var zero = cTof(0)
-        console.log(zero)
-
-        var twenty = cTof(20)
-        console.log(twenty)
-
-        var boiling = cTof(100)
-        console.log(boiling)
-
-        var freeze = cTof(-40)
-        console.log(freeze)
-
-
-        function kelvin(kel) {
-            // var temperature = kel + 273
-            // console.log(temperature)
-            return(kel + 273)
-        }
-        // kelvin(100)
-        var first = kelvin(30)
-        console.log(first)
-
-        var last = kelvin(50)
-        console.log(last)
-
-        var middle = kelvin(160)
-        console.log(middle)
-
-
-        function concat(a, b) {
-            let c = a + b
-            console.log(c)
-        }
-        concat("Hello ", "World")
-
-        // function outer(first, second) {
-        //     function inner(single) {
-        //         return single ** 2;
-        //     }
-        //     console.log(inner(first + second));
-        // }
-        // outer(20, 15)
-        // outer(3, 4)
-
-        // OR
-
-        function outer(first, second) {
-            let total = first + second;
-
-            function inner(single) {
-                let square = single ** 2;
-                console.log(square)
+        const c = 2
+        function sum(a, b) {
+            // const c= 3
+            "use strict";
+            function mult(a, b) {
+                return a * b * c
             }
-            inner(total)
+            console.log(mult(a, b))
+            return a + b + c
         }
-        outer(20, 15)
-        outer(3, 4)
+        const result = sum(10, 5);
+        console.log(result)
 
-        let i = 1;
-        const logRecorder = setInterval(function() {
-            console.log("Here is message number! " + i)
-            var text = document.querySelector(".interval")
-            text.innerText = "Here is message number! " + i
-            i += 1
-        }, 2000);
 
-        console.log(logRecorder)
 
-        setTimeout(function() {
-            clearInterval(logRecorder)
-            var stop = document.querySelector(".end")
-            stop.innerText = "I've stopped!"
-        }, 10500)
+        const x = 2;
+        let d = 15;
+        function myFn1(z) {
+            let x;
+            let d = 10;
+            myFn2(x)
+        }
+
+        function myFn2(z) {
+            let y = 5;
+            console.log(z, x, y, d)
+        }
+
+        myFn1()
+        // ANSWER: (Undefined, 2, 5, 15)
+        // Undefined because the parameter of "myFn2" has been assigned the value of "x" in "myFn1" when it was called. 
+        // The value of "x" remians "undefined" because "x" was declared but no value assigned to it
         
+
+
+        setTimeout(function timeFn() {
+            console.log("Hello from this function")
+        }, 2000);
+        timeFn();
+        // AMSWER: Code runs after 2 secs but gives an error message because "timeFn" is not "declared" in the global scope
+        // but instead passed as a name in the "setTimeout" function call.
+        // It is considered as an expression that is passed as an argument
 
 
     </script>
