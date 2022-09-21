@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="../../../webdev/HTML/img/javascript.png" type="image/png">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Arrays</title>
+</head>
+<body>
+    
+
+    <div class="interval">
+        Check Console
+    </div>
+
+    <div class="end"></div>
+
+
+
+
+    <script>
+
+        "use strict";
+
+        const myArray = [1, 2, 3, 4];
+        const myArray2 = [1, 2, 3, 4];
+
+        console.log(myArray === myArray2);
+        // ANSWER: Returns "false" to the console because even though the values are the same,
+        // the pointers of the variables in the list are different.
+
+
+        const firstArray = ["Dog", 23, 55, true, "Aegon"];
+        const copyOfFirstArray = firstArray;
+        console.log(firstArray === copyOfFirstArray);
+        // ANSWER: Returns true cause they are well and truly the same.
+
+
+
+        //                  ADDING ELEMENTS TO LIST
+
+
+        // At the beginning
+        const theArray = [true, "nullify"];
+        // Add "Hello" and 100
+        theArray.unshift("Hello");
+        console.log(theArray);
+
+        theArray.unshift(100);
+        console.log(theArray);
+        const smallStr = theArray.toString();
+        const elemNode = document.querySelector(".end");
+        elemNode.innerHTML = smallStr
+
+
+
+        // At specific index
+        const smallArray = ["Messi", 100, 420, "FCB"];
+        // Add element at index 10
+        smallArray[10] = "abc";
+        console.log(smallArray);
+        
+
+
+
+
+        // Adding Objects 
+        const carList = [
+            {
+                carBrand: "Elemento",
+                price: 20000
+            },
+            {
+                carBrand: "Bugatti",
+                price: 35000
+            },
+            {
+                carBrand: "Tesla",
+                price: 25000
+            }
+        ];
+
+        console.log(carList);
+
+
+        // Add new object
+        const newCar = {
+            carBrand: "Audi",
+            price: 30000
+        };
+        carList.push(newCar);
+        // console.log(carList);
+
+
+
+    </script>
+
+
+</body>
+</html>
